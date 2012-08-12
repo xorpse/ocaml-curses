@@ -783,3 +783,8 @@ sig
   val wide_ncurses : bool
 end
 
+(** {2 Utility functions} *)
+(** Note the functions here are not part of ncurses itself! **)
+(** Extracts the 'true' OCaml string from a string passed back from C i.e.
+ *  after a call to [getstr]. *)
+val scstr : string -> string

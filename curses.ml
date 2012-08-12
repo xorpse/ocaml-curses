@@ -198,3 +198,9 @@ let printw fmt = Printf.ksprintf addstr fmt
 let mvprintw y x fmt = Printf.ksprintf (mvaddstr y x) fmt
 let wprintw win fmt = Printf.ksprintf (waddstr win) fmt
 let mvwprintw win y x fmt = Printf.ksprintf (mvwaddstr win y x) fmt
+
+let scstr str =
+   try
+      String.sub str 0 (String.index str '\x00')
+   with
+      | Invalid_argument _ | Not_found -> str
