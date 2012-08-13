@@ -213,6 +213,7 @@ static void winch_handler(int n)
 }
 #endif
 
+#include <locale.h>
 #include "functions.c"
 #include "caml/signals.h"
 
@@ -247,3 +248,8 @@ value mlcurses_wgetch(value win)
    CAMLreturn(Val_int(ch));
 }
 
+CAMLprim value curses_enable_unicode(value unit)
+{
+   setlocale(LC_ALL, "");
+   return(Val_unit);
+}

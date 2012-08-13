@@ -192,6 +192,8 @@ end
 
 module Curses_config = struct
 #include "config.ml"
+
+   external enable_unicode : unit -> unit = "curses_enable_unicode"
 end
 
 let printw fmt = Printf.ksprintf addstr fmt

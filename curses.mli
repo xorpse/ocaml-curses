@@ -781,6 +781,9 @@ sig
   (** If [Curses] has been linked against a curses library with wide
     * character support, then [wide_ncurses] is [true]. *)
   val wide_ncurses : bool
+  (** Call [enable_unicode] before any other [Curses] function to enable
+   * unicode support. Internally this issues: setlocale(LC_ALL, ""). *)
+  val enable_unicode : unit -> unit
 end
 
 (** {2 Utility functions} *)

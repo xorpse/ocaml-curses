@@ -1,0 +1,5 @@
+Build instructions
+##################
+# autoreconf
+# ./configure --enable-widec
+# make all opt
